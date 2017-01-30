@@ -1,0 +1,50 @@
+{
+	entry = {
+		cell = PSLinkCell;
+		label = FLEXDemGuns;
+		icon = "FLEXdemguns.png";
+		items = (
+			{
+				bundle = AppList;
+				isController = 1;
+				cell = PSLinkCell;
+				label = "Enabled Applications";
+				ALSettingsPath = "/var/mobile/Library/Preferences/com.matchstic.flexdemguns.plist";
+				ALSettingsKeyPrefix = "AppList-";
+				"ALSettingsDefaultValue" = "";
+				ALAllowsSelection = 1;
+				ALSectionDescriptors = (
+					{
+						items = ();
+						"footer-title" = "Select which applications to load FLEX into.";
+					},
+					{
+						title = "User Applications";
+						predicate = "isSystemApplication = FALSE";
+						"icon-size" = 29;
+						"suppress-hidden-apps" = 1;
+						"cell-class-name" = ALSwitchCell;
+					},
+					{
+						title = "System Applications";
+						predicate = "isSystemApplication = TRUE AND NOT (displayIdentifier IN {'eu.heinelt.ifile'})";
+						"icon-size" = 29;
+						"suppress-hidden-apps" = 1;
+						"cell-class-name" = ALSwitchCell;
+					},
+				);
+			},
+			{
+ 			    cell = PSSwitchCell;
+ 			    default = false;
+ 			    defaults = "com.matchstic.flexdemguns";
+ 			    key = "AppList-com.apple.springboard";
+ 			    label = "Enabled on SpringBoard";
+			},
+			{
+				cell = PSGroupCell;
+				footerText = "Author: Matt Clarke, Xueshi Qiao. \nFLEXLoader is inspired by RHRevealLoader and modified from RHRevealLoader. \n\nThis tweak is not officially supported. For more information about FLEX see https://github.com/Flipboard/FLEX";
+			},
+		);
+	};
+}

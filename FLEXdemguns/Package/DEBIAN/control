@@ -1,0 +1,12 @@
+Package: com.matchstic.FLEXdemguns
+Name: FLEXDemGuns
+Version: 0.1
+Description: Provides FLEX for iOS 10, and works when the passcode is on at the lockscreen.
+Section: System
+Depends: firmware (>= 8.0)
+Priority: optional
+Architecture: iphoneos-arm
+Author: Matt Clarke <matt@incendo.ws>
+dev: Matt Clarke <matt@incendo.ws>
+Maintainer: Matt Clarke <matt@incendo.ws>
+

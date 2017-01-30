@@ -1,0 +1,3 @@
+[submodule "FLEXdemguns/Vendor/FLEX"]
+	path = FLEXdemguns/Vendor/FLEX
+	url = https://github.com/Flipboard/FLEX.git
