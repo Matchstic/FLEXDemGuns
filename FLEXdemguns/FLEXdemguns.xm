@@ -23,8 +23,17 @@ static FLEXDGLaunchListener *listener;
 
 %ctor {
     // I am very lazy and don't want to do this during the lifetime of the application.
-    CFPreferencesAppSynchronize(CFSTR("com.matchstic.flexdemguns"));
-    settings = (__bridge NSDictionary *)CFPreferencesCopyMultiple(CFPreferencesCopyKeyList(CFSTR("com.matchstic.flexdemguns"), kCFPreferencesCurrentUser, kCFPreferencesAnyHost), CFSTR("com.matchstic.flexdemguns"), kCFPreferencesCurrentUser, kCFPreferencesAnyHost);
+    // See: http://iphonedevwiki.net/index.php/PreferenceBundles#Into_sandboxed.2Funsandboxed_processes_in_iOS_8
+    BOOL isSystem = [NSHomeDirectory() isEqualToString:@"/var/mobile"];
+    
+    if(isSystem) {
+        CFPreferencesAppSynchronize(CFSTR("com.matchstic.flexdemguns"));
+        settings = (__bridge NSDictionary *)CFPreferencesCopyMultiple(CFPreferencesCopyKeyList(CFSTR("com.matchstic.flexdemguns"), kCFPreferencesCurrentUser, kCFPreferencesAnyHost), CFSTR("com.matchstic.flexdemguns"), kCFPreferencesCurrentUser, kCFPreferencesAnyHost);
+    }
+    
+    if (!settings) {
+        settings = [NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.matchstic.flexdemguns.plist"];
+    }
     
     NSString *currentBundleIdentifier = [[NSBundle mainBundle] bundleIdentifier];
     id thing = [settings objectForKey:[NSString stringWithFormat:@"AppList-%@", currentBundleIdentifier]];

@@ -49,8 +49,17 @@ static bool _logos_method$_ungrouped$FLEXWindow$_shouldCreateContextAsSecure(_LO
 
 static __attribute__((constructor)) void _logosLocalCtor_432c7a00(int argc, char **argv, char **envp) {
     
-    CFPreferencesAppSynchronize(CFSTR("com.matchstic.flexdemguns"));
-    settings = (__bridge NSDictionary *)CFPreferencesCopyMultiple(CFPreferencesCopyKeyList(CFSTR("com.matchstic.flexdemguns"), kCFPreferencesCurrentUser, kCFPreferencesAnyHost), CFSTR("com.matchstic.flexdemguns"), kCFPreferencesCurrentUser, kCFPreferencesAnyHost);
+    
+    BOOL isSystem = [NSHomeDirectory() isEqualToString:@"/var/mobile"];
+    
+    if(isSystem) {
+        CFPreferencesAppSynchronize(CFSTR("com.matchstic.flexdemguns"));
+        settings = (__bridge NSDictionary *)CFPreferencesCopyMultiple(CFPreferencesCopyKeyList(CFSTR("com.matchstic.flexdemguns"), kCFPreferencesCurrentUser, kCFPreferencesAnyHost), CFSTR("com.matchstic.flexdemguns"), kCFPreferencesCurrentUser, kCFPreferencesAnyHost);
+    }
+    
+    if (!settings) {
+        settings = [NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.matchstic.flexdemguns.plist"];
+    }
     
     NSString *currentBundleIdentifier = [[NSBundle mainBundle] bundleIdentifier];
     id thing = [settings objectForKey:[NSString stringWithFormat:@"AppList-%@", currentBundleIdentifier]];

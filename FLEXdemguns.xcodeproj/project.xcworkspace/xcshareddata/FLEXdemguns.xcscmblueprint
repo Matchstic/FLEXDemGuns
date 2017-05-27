@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "11BC49555082449EA6E936FD993A4048B767F343",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "11BC49555082449EA6E936FD993A4048B767F343" : 9223372036854775807,
+    "46B3A7D7791AFC212FFD6D68FA84110731573E19" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "332DDA11-F2AC-4F42-8781-B6FB97B1D9CF",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "11BC49555082449EA6E936FD993A4048B767F343" : "FLEXdemguns\/",
+    "46B3A7D7791AFC212FFD6D68FA84110731573E19" : "FLEXdemguns\/FLEXdemguns\/Vendor\/FLEX\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "FLEXdemguns",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "FLEXdemguns.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Matchstic\/FLEXDemGuns.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "11BC49555082449EA6E936FD993A4048B767F343"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Flipboard\/FLEX.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "46B3A7D7791AFC212FFD6D68FA84110731573E19"
+    }
+  ]
+}
